@@ -11,6 +11,7 @@ const links = [
   { href: '/instructors', label: 'Instructors' },
   { href: '/about', label: 'About' },
   { href: '/faq', label: 'FAQ' },
+  { href: '/track', label: 'Track Order' },
 ]
 
 function CountBadge({ count }) {

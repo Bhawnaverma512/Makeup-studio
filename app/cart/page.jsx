@@ -75,8 +75,8 @@ export default function CartPage() {
               </div>
               <button
                 onClick={() => {
-                  checkout()
-                  router.push('/dashboard')
+                  const orderNumber = checkout((id) => getCourse(id)?.price ?? 0)
+                  router.push(orderNumber ? `/track?order=${orderNumber}&new=1` : '/dashboard')
                 }}
                 className="w-full btn btn-primary"
               >

@@ -45,6 +45,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">My learning</h4>
             <ul className="space-y-2 text-small text-cream/70">
               <li><Link href="/dashboard" className="hover:text-accent transition-colors">Dashboard</Link></li>
+              <li><Link href="/track" className="hover:text-accent transition-colors">Track Order</Link></li>
               <li><Link href="/wishlist" className="hover:text-accent transition-colors">Wishlist</Link></li>
               <li><Link href="/cart" className="hover:text-accent transition-colors">Cart</Link></li>
             </ul>
