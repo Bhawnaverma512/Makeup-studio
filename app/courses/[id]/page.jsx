@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Star, Clock, Users, Award, Check, PlayCircle } from 'lucide-react'
+import { Star, Clock, Users, Award, Check, PlayCircle, PhoneCall } from 'lucide-react'
 import CourseActions from '../../../components/course-actions'
 import CourseCard from '../../../components/course-card'
 import Avatar from '../../../components/avatar'
-import { courses, getCourse, getInstructor } from '../../../lib/data'
+import { courses, getCourse, getInstructor, site } from '../../../lib/data'
 
 export function generateStaticParams() {
   return courses.map((c) => ({ id: String(c.id) }))
@@ -145,6 +145,16 @@ export default function CourseDetail({ params }) {
                       </li>
                     ))}
                   </ul>
+                </div>
+
+                <div className="border-t border-beige mt-6 pt-6 flex gap-3 text-small">
+                  <PhoneCall size={18} className="text-accent flex-shrink-0 mt-0.5" />
+                  <p className="text-charcoal/70">
+                    Questions about this course? Call our 24/7 voice agent:{' '}
+                    <a href={site.voiceAgentPhoneHref} className="font-medium text-accent hover:underline whitespace-nowrap">
+                      {site.voiceAgentPhone}
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>

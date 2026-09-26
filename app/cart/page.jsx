@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { ShoppingBag, Trash2 } from 'lucide-react'
-import { getCourse } from '../../lib/data'
+import { PhoneCall, ShoppingBag, Trash2 } from 'lucide-react'
+import { getCourse, site } from '../../lib/data'
 import { useAcademy } from '../../lib/store'
 
 export default function CartPage() {
@@ -85,6 +85,15 @@ export default function CartPage() {
               <Link href="/courses" className="block text-center text-small text-accent mt-4 hover:underline">
                 Continue browsing
               </Link>
+              <p className="border-t border-beige mt-6 pt-6 text-small text-charcoal/70 flex gap-2">
+                <PhoneCall size={16} className="text-accent flex-shrink-0 mt-0.5" />
+                <span>
+                  Need help enrolling? Call our 24/7 voice agent:{' '}
+                  <a href={site.voiceAgentPhoneHref} className="font-medium text-accent hover:underline whitespace-nowrap">
+                    {site.voiceAgentPhone}
+                  </a>
+                </span>
+              </p>
             </div>
           </div>
         )}

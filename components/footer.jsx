@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { categories } from '../lib/data'
+import { PhoneCall } from 'lucide-react'
+import { categories, site } from '../lib/data'
 
 export default function Footer() {
   return (
@@ -8,7 +9,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12">
           <div>
             <h3 className="font-serif text-2xl font-semibold mb-4">Makeup<span className="text-accent">.</span></h3>
-            <p className="text-cream/70 text-small">Professional makeup education for artists worldwide.</p>
+            <p className="text-cream/70 text-small mb-4">Professional makeup education for artists worldwide.</p>
+            <a href={site.voiceAgentPhoneHref} className="flex items-center gap-2 text-small hover:text-accent transition-colors">
+              <PhoneCall size={16} className="text-accent" />
+              <span>
+                <span className="block text-cream/60">24/7 voice agent</span>
+                {site.voiceAgentPhone}
+              </span>
+            </a>
           </div>
 
           <div>

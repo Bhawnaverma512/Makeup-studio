@@ -2,9 +2,9 @@
 
 import { Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { Filter, Search, X } from 'lucide-react'
+import { Filter, PhoneCall, Search, X } from 'lucide-react'
 import CourseCard from '../../components/course-card'
-import { courses, categories, levels } from '../../lib/data'
+import { courses, categories, levels, site } from '../../lib/data'
 
 function FilterGroup({ title, options, value, onChange }) {
   return (
@@ -120,6 +120,14 @@ export default function CoursesPage() {
         <div className="container-custom py-16">
           <h1 className="font-serif text-display-lg md:text-display text-near-black mb-4">All Courses</h1>
           <p className="text-lg text-charcoal/70 max-w-xl">Discover our collection of professional makeup courses.</p>
+          <a
+            href={site.voiceAgentPhoneHref}
+            className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-beige text-small text-charcoal hover:border-accent transition-colors"
+          >
+            <PhoneCall size={16} className="text-accent" />
+            Not sure which course? Call our 24/7 voice agent:
+            <span className="font-medium text-accent">{site.voiceAgentPhone}</span>
+          </a>
         </div>
       </div>
       <Suspense fallback={<div className="container-custom py-12 text-charcoal/60">Loading courses…</div>}>
